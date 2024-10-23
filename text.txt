@@ -1,0 +1,8 @@
+install jetstream for good design 
+
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+
+php artisan vendor:publish --tag=jetstream-views
+php artisan vendor:publish --tag="Laravel\Fortify\FortifyServiceProvider"
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
