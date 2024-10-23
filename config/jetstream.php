@@ -57,6 +57,8 @@ return [
     |
     */
 
+    // profile photo added here
+    
     'features' => [
         Features::termsAndPrivacyPolicy(),
         Features::profilePhotos(),
