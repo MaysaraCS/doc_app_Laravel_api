@@ -27,6 +27,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'type',
         'email',
         'password',
     ];
@@ -52,6 +53,28 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+
+    //this is to state that users has one relationship with doctor
+    //each user id refer to one doctor id
+    public function doctor(){
+        return $this->hasOne(Doctor::class, 'doc_id');
+    }
+
+    //same go to user details
+    public function user_details(){
+        return $this->hasOne(UserDetails::class, 'user_id');
+    }
+
+    //a user may has many appointments
+    public function appointments(){
+        return $this->hasMany(Appointments::class, 'user_id');
+    }
+
+    //a user may has many reviews
+    public function reviews(){
+        return $this->hasMany(Reviews::class, 'user_id');
+    }
+    
     /**
      * Get the attributes that should be cast.
      *
