@@ -28,3 +28,4 @@ php artisan make:controller AppointmentsController --resource
 php artisan make:controller DocsController --resource
 php artisan make:migration reviews -m 
 $ php artisan make:model reviews -m
+php artisan make:migration add_new_clumn --table=user_details 
