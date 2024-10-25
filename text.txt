@@ -18,3 +18,7 @@ $ php artisan make:model UserDetails -m
                         <option value="doctor">doctor</option>
                             <option value="user">User</option>
             </div>
+
+
+
+php artisan make:controller UserController --resource
