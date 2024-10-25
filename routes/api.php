@@ -9,7 +9,17 @@ use Illuminate\Support\Facades\Route;
 
 //this is the endpoint with prefix /api
 Route::post('/login', [UsersController::class, 'login']);
+Route::post('/register', [UsersController::class, 'register']);
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:sanctum');
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// })->middleware('auth:sanctum');
+
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get('/user', [UsersController::class, 'index']);
+    Route::post('/fav', [UsersController::class, 'storeFavDoc']);
+    Route::post('/logout', [UsersController::class, 'logout']);
+    Route::post('/book', [AppointmentsController::class, 'store']);
+    Route::post('/reviews', [DocsController::class, 'store']);
+    Route::get('/appointments', [AppointmentsController::class, 'index']);
+});
