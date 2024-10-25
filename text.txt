@@ -24,3 +24,4 @@ $ php artisan make:model UserDetails -m
 php artisan make:controller UserController --resource
 
 php artisan make:model Appointments -m
+php artisan make:controller AppointmentsController --resource
